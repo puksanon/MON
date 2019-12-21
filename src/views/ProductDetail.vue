@@ -4,7 +4,7 @@
     <div class="content">
       <div class="blog_content blog_nav h100">
         <nav class="navbar navbar-light bg-light">
-          <span class="navbar-brand mb-0 h1">MENU</span>
+          <span class="navbar-brand mb-0 h1">DETAIL</span>
           <div class="form-inline">
             <input
               type="text"
@@ -370,6 +370,7 @@ export default {
   },
 
   mounted() {
+    if( this.pname){
     this.proname = this.pname;
     this.prodetail = this.detail;
     this.proprice = this.price;
@@ -378,6 +379,9 @@ export default {
     this.proimg2 = this.img2;
     this.proimg3 = this.img3;
     this.proid = this.pid;
+    }else{
+      this.$router.push( '/Product' );
+    }
   },
 
   methods: {
@@ -389,6 +393,10 @@ export default {
 </script>
 
 <style scoped>
+.input-search{
+  max-width: 150px;
+}
+
 .card-footer {
   border: 0;
   background-color: transparent;
@@ -519,5 +527,18 @@ img {
   width: 100%;
   display: block;
   position: relative;
+}
+
+@media (max-width: 580px) {
+  .input-search {
+    display: none;
+  }
+}
+
+.input-search {
+  border: 0.5px solid black;
+  background-color: transparent;
+  border-radius: 8px;
+  color: black;
 }
 </style>

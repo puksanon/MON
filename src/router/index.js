@@ -1,11 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-const Home = () => import("@/views/Home.vue");
-const NotFound = () => import("@/views/NotFound.vue");
-const Product = () => import("@/views/Product.vue");
-const ProductDetail = () => import("@/views/ProductDetail.vue");
-const Customize = () => import("@/views/Customize.vue");
-const Cart = () => import("@/views/Cart.vue");
+const Home            = () => import("@/views/Home.vue");
+const NotFound        = () => import("@/views/NotFound.vue");
+const Product         = () => import("@/views/Product.vue");
+const ProductDetail   = () => import("@/views/ProductDetail.vue");
+const Customize       = () => import("@/views/Customize.vue");
+const Cart            = () => import("@/views/Cart.vue");
+const About           = () => import("@/views/About.vue");
 Vue.use(VueRouter);
 
 const routes = [
@@ -21,6 +22,11 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home
+  },
+  {
+    path: "/About",
+    name: "About",
+    component: About
   },
   {
     path: "/Cart",

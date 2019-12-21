@@ -109,6 +109,12 @@ export default {
   padding: 0px 15px;
 }
 
+@media (max-width: 580px) {
+  .input-search {
+    display: none;
+  }
+}
+
 .input-search {
   border: 0.5px solid black;
   background-color: transparent;
@@ -148,4 +154,5 @@ img {
   display: block;
   position: relative;
 }
+
 </style>

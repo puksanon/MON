@@ -4,7 +4,7 @@
     <div class="content">
       <div class="blog_content blog_nav">
         <nav class="navbar navbar-light bg-light">
-          <span class="navbar-brand mb-0 h1">Navbar</span>
+          <span class="navbar-brand mb-0 h1">FILTER</span>
         </nav>
       </div>
 
@@ -171,6 +171,19 @@ export default {
 </script>
 
 <style scoped>
+@media (max-width: 580px) {
+  .input-search {
+    display: none;
+  }
+}
+
+.input-search {
+  border: 0.5px solid black;
+  background-color: transparent;
+  border-radius: 8px;
+  color: black;
+}
+
 .cus_select .card {
   background-color: rgb(231, 231, 231);
 }
