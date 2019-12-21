@@ -32,28 +32,28 @@
             <div class="main_cus_img">
               <div class="card text-left  h100">
                 <div class="card text-center">
-                <img
-                  class="card-img-top"
-                  :src="gotimg(imghead)"
-                  alt="Card image cap"
-                />
-              </div>
+                  <img
+                    class="card-img-top"
+                    :src="gotimg(imghead)"
+                    alt="Card image cap"
+                  />
+                </div>
 
-              <div class="card text-center">
-                <img
-                  class="card-img-top"
-                  :src="gotimg(imgcenter)"
-                  alt="Card image cap"
-                />
-              </div>
+                <div class="card text-center">
+                  <img
+                    class="card-img-top"
+                    :src="gotimg(imgcenter)"
+                    alt="Card image cap"
+                  />
+                </div>
 
-              <div class="card text-center">
-                <img
-                  class="card-img-top"
-                  :src="gotimg(imgfooter)"
-                  alt="Card image cap"
-                />  
-              </div>
+                <div class="card text-center">
+                  <img
+                    class="card-img-top"
+                    :src="gotimg(imgfooter)"
+                    alt="Card image cap"
+                  />
+                </div>
 
                 <div class="card-footer">
                   <div class="btn_reset">
@@ -65,11 +65,11 @@
           </div>
 
           <div class="col-md-2">
-              <div class="cus_select">
-                <CustomizeSelecthead @chooseImg="handlechoose"  />
-                <CustomizeSelectCenter @chooseImgcenter="handlechoose2" />
-                <CustomizeSelectfooter @chooseImgfooter="handlechoosefooter" />
-              </div>
+            <div class="cus_select">
+              <CustomizeSelecthead @chooseImg="handlechoose" />
+              <CustomizeSelectCenter @chooseImgcenter="handlechoose2" />
+              <CustomizeSelectfooter @chooseImgfooter="handlechoosefooter" />
+            </div>
           </div>
 
           <div class="col-md-4">
@@ -93,7 +93,7 @@
                     </p>
                     <hr />
                     <div class="row">
-                      <button @click="ele()">BUY</button>
+                      <button class="btn btn-buy " @click="ele()">CONFIRM</button>
                     </div>
                   </div>
                 </div>
@@ -110,9 +110,12 @@
 <script>
 const Navbar = () => import("@/components/Nav.vue");
 const Footer = () => import("@/components/Footer");
-const CustomizeSelecthead = () => import('@/components/CustomizeSelecthead.vue')
-const CustomizeSelectCenter = () => import('@/components/CustomizeSelectCenter.vue')
-const CustomizeSelectfooter = () => import('@/components/CustomizeSelectfooter.vue')
+const CustomizeSelecthead = () =>
+  import("@/components/CustomizeSelecthead.vue");
+const CustomizeSelectCenter = () =>
+  import("@/components/CustomizeSelectCenter.vue");
+const CustomizeSelectfooter = () =>
+  import("@/components/CustomizeSelectfooter.vue");
 export default {
   name: "Customize",
   components: {
@@ -125,50 +128,49 @@ export default {
   data() {
     return {
       product: [],
-      imghead : "m2.png",
+      imghead: "m2.png",
       imgcenter: "6.png",
-      imgfooter : "m3.png"
+      imgfooter: "m3.png"
     };
   },
   /* eslint no-console: "off" */
-  methods:{
-    handlechoose(img){
-      this.imghead = img
+  methods: {
+    handlechoose(img) {
+      this.imghead = img;
     },
 
-    handlechoose2(img){
-      this.imgcenter = img
+    handlechoose2(img) {
+      this.imgcenter = img;
     },
 
-    handlechoosefooter(img){
-      this.imgfooter = img
+    handlechoosefooter(img) {
+      this.imgfooter = img;
     },
 
-    gotimg(img){
-      return `/images/${img}`
+    gotimg(img) {
+      return `/images/${img}`;
     },
 
-    reset(){
+    reset() {
       document.getElementById("selecthead").value = "";
       document.getElementById("selectcenter").value = "";
       document.getElementById("selectfooter").value = "";
-      this.imghead = "m2.png",
-      this.imgcenter= "6.png",
-      this.imgfooter= "m3.png"
+      (this.imghead = "m2.png"),
+      (this.imgcenter = "6.png"),
+      (this.imgfooter = "m3.png");
     },
 
-    ele(){
+    ele() {
       const head = document.getElementById("selecthead").value;
       const center = document.getElementById("selectcenter").value;
       const footer = document.getElementById("selectfooter").value;
-      console.log(head,center,footer)  
+      console.log(head, center, footer);
     }
   }
 };
 </script>
 
 <style scoped>
-
 .cus_select .card {
   background-color: rgb(231, 231, 231);
 }
@@ -240,9 +242,9 @@ export default {
 .btn_cart .btn-buy {
   border: 1px solid black;
   color: black;
+  background-color: white;
   margin: 5px 10px;
 }
-
 
 .content {
   color: black;

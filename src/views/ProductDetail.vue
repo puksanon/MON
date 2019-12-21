@@ -54,7 +54,7 @@
                 <div class="carousel-item">
                   <img
                     class="d-block w-100"
-                     :src="Scrimg_add(proimg2)"
+                    :src="Scrimg_add(proimg2)"
                     alt="Second slide"
                   />
                 </div>
@@ -100,30 +100,29 @@
                 <hr />
                 <h6 class="card-subtitle mb-2 text-muted">DETAIL :</h6>
                 <p class="card-text">
-                 {{ prodetail }}
+                  {{ prodetail }}
                 </p>
               </div>
               <div class="card-footer">
                 <p class="card-text">
-                  <small class="text-muted">TYPE : {{protype}}</small>
+                  <small class="text-muted">TYPE : {{ protype }}</small>
                 </p>
                 <p class="card-text">
                   <small class="text-muted">PRICE : {{ proprice }} BATH.</small>
                 </p>
                 <div class="btn_cart">
-                  <hr>
-                    <div class="row">
-                      <router-link
-                        class="btn btn-buy"
-                        :to="'/cart'"
-                        >BUY NOW</router-link
-                      >
-                      <router-link v-if="proid == '001'"
-                        class="btn btn-customize"
-                        :to="'/Product/Customize'"
-                        >CUSTOMIZE</router-link
-                      >
-                    </div>
+                  <hr />
+                  <div class="row">
+                    <router-link class="btn btn-buy" :to="'/cart'"
+                      >BUY NOW</router-link
+                    >
+                    <router-link
+                      v-if="proid == '001'"
+                      class="btn btn-customize"
+                      :to="'/Product/Customize'"
+                      >CUSTOMIZE</router-link
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -351,7 +350,7 @@ const Navbar = () => import("@/components/Nav.vue");
 const Footer = () => import("@/components/Footer");
 export default {
   name: "ProductDetail",
-  props: ['pname','price','type','detail','img1','img2','img3','pid'],
+  props: ["pname", "price", "type", "detail", "img1", "img2", "img3", "pid"],
   components: {
     Navbar,
     Footer
@@ -359,42 +358,42 @@ export default {
 
   data() {
     return {
-        proname:"",
-        prodetail:"",
-        proprice:"",
-        protype:"",
-        proimg1:"",
-        proimg2:"",
-        proimg3:"",
-        proid:""
-      }
+      proname: "",
+      prodetail: "",
+      proprice: "",
+      protype: "",
+      proimg1: "",
+      proimg2: "",
+      proimg3: "",
+      proid: ""
+    };
   },
-  
-   mounted() {
-      this.proname    = this.pname
-      this.prodetail  = this.detail
-      this.proprice   = this.price  
-      this.protype    = this.type
-      this.proimg1    = this.img1
-      this.proimg2    = this.img2
-      this.proimg3    = this.img3
-      this.proid      = this.pid
+
+  mounted() {
+    this.proname = this.pname;
+    this.prodetail = this.detail;
+    this.proprice = this.price;
+    this.protype = this.type;
+    this.proimg1 = this.img1;
+    this.proimg2 = this.img2;
+    this.proimg3 = this.img3;
+    this.proid = this.pid;
   },
 
   methods: {
     Scrimg_add(img) {
-      return `/images/${img}`
-    },
+      return `/images/${img}`;
+    }
   }
 };
 </script>
 
 <style scoped>
-.card-footer{
+.card-footer {
   border: 0;
   background-color: transparent;
 }
-h5{
+h5 {
   font-size: 28px;
 }
 .btn-cart {

@@ -7,10 +7,11 @@
       v-bind:index="index"
       v-bind:key="item.id"
     >
-      <img :src="Scrimg(item.images.img1)"
+      <img
+        :src="Scrimg(item.images.img1)"
         class="card-img-top"
         alt="Card image cap"
-      >
+      />
       <div class="card-footer">
         <div class="form-row">
           <div class="topic col-md-8">
@@ -21,17 +22,25 @@
             </p>
           </div>
           <div class="mr col-md-4">
-            <a><router-link class="btn block-center btn-add stretched-link" :to="{ name: 'ProductDetail', params: {
-            pname:item.name ,
-            price:item.price,
-            type:item.type,
-            detail:item.detail,
-            img1:item.images.img1,
-            img2:item.images.img2,
-            img3:item.images.img3,
-            pid : item.id
-            
-            }}">DETAIL</router-link></a>
+            <a
+              ><router-link
+                class="btn block-center btn-add stretched-link"
+                :to="{
+                  name: 'ProductDetail',
+                  params: {
+                    pname: item.name,
+                    price: item.price,
+                    type: item.type,
+                    detail: item.detail,
+                    img1: item.images.img1,
+                    img2: item.images.img2,
+                    img3: item.images.img3,
+                    pid: item.id
+                  }
+                }"
+                >DETAIL</router-link
+              ></a
+            >
           </div>
         </div>
       </div>
@@ -46,14 +55,14 @@ export default {
   name: "CardProduct",
   data() {
     return {
-      products,
+      products
     };
   },
 
   methods: {
     Scrimg(img) {
-      return `/images/${img}`
-    },
+      return `/images/${img}`;
+    }
   }
 };
 </script>
@@ -66,17 +75,16 @@ export default {
 .mr a {
   width: 100%;
   display: block;
-    color: black;
+  color: black;
 }
 
 .mr {
   margin: 20px 0px;
 }
 
-.card-footer{
+.card-footer {
   border: none;
   background-color: transparent;
-
 }
 .item img {
   height: auto;
@@ -103,7 +111,7 @@ export default {
   color: black;
 }
 
-.card-group>.card {
-     margin-bottom: 0;
+.card-group > .card {
+  margin-bottom: 0;
 }
 </style>

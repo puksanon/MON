@@ -133,7 +133,8 @@ export default {
   max-width: 150px;
 }
 
-.content .img,img {
+.content .img,
+img {
   height: auto;
   background-position: center;
   background-repeat: no-repeat;
